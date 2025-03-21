@@ -10,7 +10,7 @@ public interface ICourseService
 
     public Task<Course> CreateCourse(Course course);
 
-    public Course UpdateCourse(Course course);
+    public Task<Course> UpdateCourse(Course course);
 
     public Task DeleteCourse(long id);
 }

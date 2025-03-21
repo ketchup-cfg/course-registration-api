@@ -37,13 +37,15 @@ public class CourseService : ICourseService
     public async Task<Course> CreateCourse(Course course)
     {
         await _context.AddAsync(course);
+        await _context.SaveChangesAsync();
         
         return course;
     }
 
-    public Course UpdateCourse(Course course)
+    public async Task<Course> UpdateCourse(Course course)
     {
         _context.Update(course);
+        await _context.SaveChangesAsync();
 
         return course;
     }
@@ -55,5 +57,6 @@ public class CourseService : ICourseService
         if (course is null) throw new CourseDoesNotExistException();
 
         _context.Remove(course);
+        await _context.SaveChangesAsync();
     }
 }
