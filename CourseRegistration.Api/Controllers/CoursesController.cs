@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using CourseRegistration.Api.Data.Models;
-using CourseRegistration.Api.Services;
+using CourseRegistration.Api.Services.Abstractions;
 
 namespace CourseRegistration.Api.Controllers
 {

@@ -1,6 +1,6 @@
 using CourseRegistration.Api.Data.Models;
 
-namespace CourseRegistration.Api.Services;
+namespace CourseRegistration.Api.Services.Abstractions;
 
 public interface ICourseService
 {

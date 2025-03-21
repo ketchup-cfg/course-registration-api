@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using CourseRegistration.Api.Data;
 using CourseRegistration.Api.Services;
+using CourseRegistration.Api.Services.Abstractions;
 
 var builder = WebApplication.CreateBuilder(args);
 

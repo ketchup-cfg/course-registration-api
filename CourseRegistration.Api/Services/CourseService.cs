@@ -1,6 +1,7 @@
 using CourseRegistration.Api.Data;
 using CourseRegistration.Api.Data.Models;
 using CourseRegistration.Api.Exceptions;
+using CourseRegistration.Api.Services.Abstractions;
 using Microsoft.EntityFrameworkCore;
 
 namespace CourseRegistration.Api.Services;
