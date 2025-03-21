@@ -1,4 +1,4 @@
-namespace CourseRegistration.Api.Models;
+namespace CourseRegistration.Api.Data.Models;
 
 public class Course
 {
