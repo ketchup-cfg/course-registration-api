@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using CourseRegistration.Api.Data;
+using CourseRegistration.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<CourseRegistrationContext>(opt =>
     opt.UseInMemoryDatabase("CourseRegistration"));
+
+builder.Services.AddScoped<ICourseService, CourseService>();
 
 var app = builder.Build();
 
