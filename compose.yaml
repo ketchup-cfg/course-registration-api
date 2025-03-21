@@ -1,0 +1,6 @@
+﻿services:
+  courseregistration.api:
+    image: courseregistration.api
+    build:
+      context: .
+      dockerfile: CourseRegistration.Api/Dockerfile
