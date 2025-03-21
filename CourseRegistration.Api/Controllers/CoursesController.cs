@@ -19,7 +19,7 @@ namespace CourseRegistration.Api.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Course?>> GetCourses()
         {
-            return _service.GetAllCourses().ToList();
+            return Ok(_service.GetAllCourses().ToList());
         }
 
         // GET: api/Courses/5
