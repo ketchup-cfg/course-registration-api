@@ -1,2 +1,9 @@
 node_modules
+
+# TypeScript
 dist
+
+.env
+
+# Prisma Client
+generated/prisma/
