@@ -1,0 +1,19 @@
+{
+  "name": "course-registration-api",
+  "version": "1.0.0",
+  "description": "A web application built with Express and TypeScript to provide a RESTful API backend for a course registration system.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ketchup-cfg/course-registration-api.git"
+  },
+  "author": "Trevor Pierce",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ketchup-cfg/course-registration-api/issues"
+  },
+  "homepage": "https://github.com/ketchup-cfg/course-registration-api#readme"
+}
