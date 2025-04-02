@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ketchup-cfg/course-registration-api#readme",
   "devDependencies": {
+    "@types/express": "^5.0.1",
     "typescript": "^5.8.2"
   },
   "dependencies": {
