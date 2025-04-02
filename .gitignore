@@ -7,3 +7,6 @@ dist
 
 # Prisma Client
 generated/prisma/
+
+# SQLite Database
+prisma/dev.db*
