@@ -2,7 +2,7 @@
   "name": "course-registration-api",
   "version": "1.0.0",
   "description": "A web application built with Express and TypeScript to provide a RESTful API backend for a course registration system.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "lint": "eslint src/",
