@@ -4,9 +4,3 @@ node_modules
 dist
 
 .env
-
-# Prisma Client
-generated/prisma/
-
-# SQLite Database
-prisma/dev.db*
