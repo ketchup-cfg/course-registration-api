@@ -22,8 +22,8 @@ export async function createCourse(
     description: string | null;
   }
 ) {
-  return client
-    .query(
+  try {
+    await client.query(
       `INSERT INTO courses (
          course_number,
          subject_code,
@@ -34,9 +34,8 @@ export async function createCourse(
          $3
        )`,
       [course.courseNumber, course.subjectCode, course.description]
-    )
-    .then(() => {})
-    .catch((err) => {
-      console.error("Unable to insert course: ", err);
-    });
+    );
+  } catch (error) {
+    console.error("Unable to insert course: ", error);
+  }
 }
