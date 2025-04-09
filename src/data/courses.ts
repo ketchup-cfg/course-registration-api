@@ -24,11 +24,11 @@ export async function createCourse(
 ) {
   try {
     await client.query(
-      `INSERT INTO courses (
+      `insert into courses (
          course_number,
          subject_code,
          description
-       ) VALUES (
+       ) values (
          $1,
          $2,
          $3
