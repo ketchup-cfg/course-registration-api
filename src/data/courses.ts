@@ -11,14 +11,14 @@ export async function createCourse(
   return client
     .query(
       `INSERT INTO courses (
-       course_number,
-       subject_code,
-       description
-    ) VALUES (
-     $1,
-     $2,
-     $3
-    )`,
+         course_number,
+         subject_code,
+         description
+       ) VALUES (
+         $1,
+         $2,
+         $3
+       )`,
       [course.courseNumber, course.subjectCode, course.description]
     )
     .then(() => {})
