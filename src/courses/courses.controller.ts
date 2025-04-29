@@ -31,11 +31,11 @@ export class CoursesController {
   }
 
   @Get(':id')
-  find(@Param() params: any, @Res() response: Response): void {
-    const course = courses.find((c) => c.id === Number(params.id));
+  find(@Param('id') id: string, @Res() response: Response): void {
+    const course = courses.find((c) => c.id === Number(id));
 
     if (!course) {
-      response.status(404).send(`No course found matching id of ${params.id}`);
+      response.status(404).send(`No course found matching id of ${id}`);
     } else {
       response.json(course);
     }
