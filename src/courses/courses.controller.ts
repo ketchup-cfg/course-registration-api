@@ -1,4 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Res, Param } from '@nestjs/common';
+import { Response } from 'express';
 
 interface Course {
   id: number;
@@ -27,5 +28,16 @@ export class CoursesController {
   @Get()
   findAll(): Course[] {
     return courses;
+  }
+
+  @Get(':id')
+  find(@Param() params: any, @Res() response: Response): void {
+    const course = courses.find((c) => c.id === Number(params.id));
+
+    if (!course) {
+      response.status(404).send(`No course found matching id of ${params.id}`);
+    } else {
+      response.json(course);
+    }
   }
 }
