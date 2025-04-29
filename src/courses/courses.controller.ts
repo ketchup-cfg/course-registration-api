@@ -1,5 +1,6 @@
-import { Controller, Get, Res, Param } from '@nestjs/common';
+import { Controller, Get, Post, Res, Param, Body } from '@nestjs/common';
 import { Response } from 'express';
+import { CreateCourseDto } from './create-course.dto';
 
 interface Course {
   id: number;
@@ -39,5 +40,15 @@ export class CoursesController {
     } else {
       response.json(course);
     }
+  }
+
+  @Post()
+  create(@Body() createCourseDto: CreateCourseDto) {
+    courses.push({
+      id: Math.max(...courses.map((c) => c.id)) + 1,
+      subjectCode: createCourseDto.subjectCode,
+      courseNumber: createCourseDto.courseNumber,
+      description: createCourseDto.description,
+    });
   }
 }
