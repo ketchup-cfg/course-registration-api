@@ -1,28 +1,24 @@
 import { Controller, Get, Post, Res, Param, Body } from '@nestjs/common';
 import { Response } from 'express';
 import { CreateCourseDto } from './create-course.dto';
+import { Course } from './course.dto';
 
-interface Course {
-  id: number;
-  subjectCode: string;
-  courseNumber: string;
-  description: string;
+const courses: Course[] = [];
+const subjects = ['ENGL', 'MATH', 'HIST'];
+
+function setupTestCourses() {
+  for (let i = 1; i < 6; i++) {
+    const course = new Course();
+    course.id = i;
+    course.subjectCode = subjects[Math.floor(Math.random() * subjects.length)];
+    course.courseNumber = `10${i}`;
+    course.description = `A test ${course.subjectCode} ${course.courseNumber} course`;
+
+    courses.push(course);
+  }
 }
 
-const courses = [
-  {
-    id: 1,
-    subjectCode: 'ENGL',
-    courseNumber: '101',
-    description: 'A test ENGL 101 course',
-  },
-  {
-    id: 2,
-    subjectCode: 'MATH',
-    courseNumber: '201',
-    description: 'A test MATH 201 course',
-  },
-];
+setupTestCourses();
 
 @Controller('courses')
 export class CoursesController {
