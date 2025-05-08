@@ -1,5 +1,12 @@
-import { Controller, Get, Post, Res, Param, Body } from '@nestjs/common';
-import { Response } from 'express';
+import {
+  Controller,
+  Get,
+  Post,
+  Param,
+  Body,
+  HttpStatus,
+  HttpException,
+} from '@nestjs/common';
 import { CreateCourseDto } from './create-course.dto';
 import { Course } from './course.interface';
 import { CoursesService } from './courses.service';
@@ -14,13 +21,16 @@ export class CoursesController {
   }
 
   @Get(':id')
-  find(@Param('id') id: string, @Res() response: Response): void {
+  find(@Param('id') id: string) {
     const course = this.coursesService.findById(Number(id));
 
     if (!course) {
-      response.status(404).send(`No course found matching id of ${id}`);
+      throw new HttpException(
+        `No course found matching id of ${id}`,
+        HttpStatus.NOT_FOUND,
+      );
     } else {
-      response.json(course);
+      return course;
     }
   }
 
